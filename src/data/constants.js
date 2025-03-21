@@ -9,11 +9,13 @@ export const Bio = {
   description:
     "I am an IT student with strong expertise in C and Java, specializing in full-stack development. Experienced in building applications and eager to apply my problem-solving skills to both front-end and back-end projects.",
   github: "https://github.com/IRFAN02AHAMED",
-  resume: "https://drive.google.com/file/d/1F2Q_731p0RNxkl2hdHdFqOQISNHbOkUG/view?usp=sharing",
+  resume:
+    "https://drive.google.com/file/d/1F2Q_731p0RNxkl2hdHdFqOQISNHbOkUG/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/irfan-ahamed-n-ba036925a/",
-  profileImage: "/src/images/HeroImage.jpg" // Replace with your own image
+  profileImage: `${process.env.PUBLIC_URL}/images/HeroImage.jpg`, // Adjusted for GitHub Pages
 };
 
+// Skills Section
 export const skills = [
   {
     title: "Programming Languages",
@@ -24,15 +26,18 @@ export const skills = [
       },
       {
         name: "Java",
-        image: "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
+        image:
+          "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
       },
       {
         name: "Python",
-        image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
       },
       {
         name: "JavaScript",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
       },
     ],
   },
@@ -41,15 +46,18 @@ export const skills = [
     skills: [
       {
         name: "HTML",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
       },
       {
         name: "CSS",
-        image: "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
       },
       {
         name: "JavaScript",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
       },
     ],
   },
@@ -58,7 +66,8 @@ export const skills = [
     skills: [
       {
         name: "PHP",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
       },
       {
         name: "MySQL",
@@ -85,6 +94,7 @@ export const skills = [
   },
 ];
 
+// Experiences Section
 export const experiences = [
   {
     id: 0,
@@ -95,6 +105,8 @@ export const experiences = [
   },
 ];
 
+// Education Section
+// Education Section
 export const education = [
   {
     id: 0,
@@ -102,7 +114,8 @@ export const education = [
     date: "2022 - 2026",
     grade: "CGPA: 8.15",
     degree: "B.Tech in Information Technology",
-    image: "https://upload.wikimedia.org/wikipedia/en/e/e2/Bannari_Amman_Institute_of_Technology_logo.png",
+    image:
+      "https://upload.wikimedia.org/wikipedia/en/e/e2/Bannari_Amman_Institute_of_Technology_logo.png",
   },
   {
     id: 1,
@@ -110,7 +123,6 @@ export const education = [
     date: "2021 - 2022",
     grade: "Percentage: 92.5%",
     degree: "HSC",
-    
   },
   {
     id: 2,
@@ -121,6 +133,8 @@ export const education = [
   },
 ];
 
+
+// Projects Section (Using Public URLs)
 export const projects = [
   {
     id: 0,
@@ -128,7 +142,7 @@ export const projects = [
     description:
       "Developed a dynamic, user-friendly finance dashboard with intuitive data visualization and real-time tracking. Optimized performance to handle large datasets efficiently.",
     tags: ["MERN Stack"],
-    image: "/images/projects/finance-dashboard.png",
+    image: `${process.env.PUBLIC_URL}/images/projects/finance-dashboard.png`,
   },
   {
     id: 1,
@@ -137,7 +151,7 @@ export const projects = [
     description:
       "Designed and developed a LinkedIn-inspired app for networking, integrating profiles, connections, and posts. Implemented push notifications for user updates.",
     tags: ["MERN Stack"],
-    image: "/images/projects/bit-linkedin-app.png",
+    image: `${process.env.PUBLIC_URL}/images/projects/bit-linkedin-app.png`,
   },
   {
     id: 2,
@@ -145,53 +159,63 @@ export const projects = [
     description:
       "Developed a web-based system for managing and displaying student results. Implemented result entry, grade calculation, and secure access.",
     tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-    image: "/images/projects/student-result-management-system.jpeg",
+    image: `${process.env.PUBLIC_URL}/images/projects/student-result-management-system.jpeg`,
   },
 ];
 
-
-
-export const achievements = [
-  {
-    title: "LeetCode 50-Day Streak Badge",
-    description: "Solved 200+ problems, demonstrating strong problem-solving skills.",
-  },
-];
+// Mini Projects
 export const miniProjects = [
   {
     id: 0,
     title: "Quiz Website",
-    description: "A dynamic quiz application using HTML, CSS, and JavaScript. Enabled timer functionality for time-bound quizzes.Implemented question randomization to enhance quiz variability",
+    description:
+      "A dynamic quiz application using HTML, CSS, and JavaScript. Enabled timer functionality for time-bound quizzes.",
     tags: ["HTML", "CSS", "JavaScript"],
-    image: "/images/projects/quiz-app.png",
+    image: `${process.env.PUBLIC_URL}/images/projects/quiz-app.png`,
   },
   {
     id: 1,
     title: "Resume Builder",
-    description: "A simple and interactive resume generator.Included pre-designed templates for a professional look. Enabled PDF export functionality for easy sharing and printing.",
-    tags: ["HTML", "CSS", "JavaScript" , "PHP"],
-    image: "/images/projects/resume-builder.png",
+    description:
+      "A simple and interactive resume generator. Included pre-designed templates for a professional look. Enabled PDF export functionality for easy sharing and printing.",
+    tags: ["HTML", "CSS", "JavaScript", "PHP"],
+    image: `${process.env.PUBLIC_URL}/images/projects/resume-builder.png`,
+  },
+  
+];
+
+// Certifications Section
+export const certifications = [
+  {
+    id: 0,
+    title: "Create Your First Python Program",
+    platform: "UST - Coursera",
+    description:
+      "Gained foundational knowledge in Python programming, including syntax, data types, and basic problem-solving.",
+    link: "https://coursera.org/verify/some-certificate-id", // Replace with the actual certificate link
+    image: `${process.env.PUBLIC_URL}/images/certifications/python-certification.png`,
+  },
+  {
+    id: 1,
+    title: "Introduction to SQL",
+    platform: "Simplilearn",
+    description:
+      "Acquired practical knowledge of SQL for database querying, data manipulation, and data analysis.",
+    link: "https://simplilearn.com/certificate/some-certificate-id", // Replace with the actual certificate link
+    image: `${process.env.PUBLIC_URL}/images/certifications/sql-certification.png`,
+  },
+  {
+    id: 2,
+    title: "Introduction to JavaScript",
+    platform: "Scaler",
+    description:
+      "Learned JavaScript fundamentals, DOM manipulation, event handling, and ES6+ concepts.",
+    link: "https://scaler.com/certificate/some-certificate-id", // Replace with the actual certificate link
+    image: `${process.env.PUBLIC_URL}/images/certifications/javascript-certification.png`,
   },
 ];
 
-export const certifications = [
-  "Create Your First Python Program from UST - Coursera",
-  "Introduction to JavaScript - Scaler",
-  "Introduction to SQL - Simplilearn",
-];
-
-export const interests = [
-  "Full Stack Development",
-  "Test Case Design and Execution",
-  "Software Development",
-  "UI/UX Design",
-];
-
-export const softSkills = [
-  "Leadership and Teamwork",
-  "Adaptability and Quick Learning",
-];
-
+// Contact Information
 export const contact = {
   phone: "+91 6374913272",
   email: "irfan02ahamed@gmail.com",

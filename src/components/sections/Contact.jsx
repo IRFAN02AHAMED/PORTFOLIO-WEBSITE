@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import EarthCanvas from "../canvas/Earth";
 
 const Container = styled.div`
   display: flex;
@@ -138,18 +137,19 @@ const Contact = () => {
   return (
     <Container id="Contact">
       <Wrapper>
-        <EarthCanvas />
         <Title>Get in Touch</Title>
         <ContactForm ref={form} onSubmit={handleSubmit}>
           <ContactInput type="text" name="name" placeholder="Your Name" required />
           <ContactInput type="email" name="email" placeholder="Your Email" required />
           <ContactTextarea name="message" placeholder="Your Message" required />
           <ContactButton type="submit">Send Message</ContactButton>
-          {message && (message.includes("successfully") ? (
-            <SuccessMsg>{message}</SuccessMsg>
-          ) : (
-            <ErrorMsg>{message}</ErrorMsg>
-          ))}
+          {message && (
+            message.includes("successfully") ? (
+              <SuccessMsg>{message}</SuccessMsg>
+            ) : (
+              <ErrorMsg>{message}</ErrorMsg>
+            )
+          )}
         </ContactForm>
       </Wrapper>
     </Container>

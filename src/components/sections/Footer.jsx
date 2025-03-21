@@ -126,7 +126,7 @@ const Footer = () => {
           <NavLink to="About" smooth={true} duration={500} offset={-80}>About</NavLink>
           <NavLink to="Skills" smooth={true} duration={500} offset={-80}>Skills</NavLink>
           <NavLink to="Projects" smooth={true} duration={500} offset={-80}>Projects</NavLink>
-          <NavLink to="Education" smooth={true} duration={500} offset={-100}>Education</NavLink>
+          <NavLink to="Education" smooth={true} duration={500} offset={-180}>Education</NavLink>
           <NavLink to="Contact" smooth={true} duration={500} offset={-80}>Contact</NavLink>
         </Nav>
 
