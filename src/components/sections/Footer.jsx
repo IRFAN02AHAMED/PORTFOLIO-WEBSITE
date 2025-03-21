@@ -4,6 +4,7 @@ import { Bio } from "../../data/constants";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
+import { Link as LinkS } from "react-scroll";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -48,14 +49,17 @@ const Nav = styled.nav`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(LinkS)`
   color: ${({ theme }) => theme.text_primary};
   text-decoration: none;
   font-size: 1.2rem;
+  cursor: pointer;
   transition: color 0.2s ease-in-out;
+
   &:hover {
     color: ${({ theme }) => theme.primary};
   }
+
   @media (max-width: 768px) {
     font-size: 1rem;
   }
@@ -69,7 +73,7 @@ const ContactInfo = styled.div`
   margin-top: 1rem;
   font-size: 1rem;
   color: ${({ theme }) => theme.text_primary};
-  
+
   a {
     color: ${({ theme }) => theme.text_primary};
     text-decoration: none;
@@ -95,6 +99,7 @@ const SocialMediaIcon = styled.a`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.text_primary};
   transition: color 0.2s ease-in-out;
+  
   &:hover {
     color: ${({ theme }) => theme.primary};
   }
@@ -107,21 +112,25 @@ const Copyright = styled.p`
   text-align: center;
 `;
 
+const date = new Date();
+const year = date.getFullYear();
+
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrapper>
         <Logo>Irfan Ahamed N</Logo>
-        
+
+        {/* Navigation Links */}
         <Nav>
-          <NavLink href="#About">About</NavLink>
-          <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Projects">Projects</NavLink>
-          <NavLink href="#Education">Education</NavLink>
-          <NavLink href="#Contact">Contact</NavLink>
+          <NavLink to="About" smooth={true} duration={500} offset={-80}>About</NavLink>
+          <NavLink to="Skills" smooth={true} duration={500} offset={-80}>Skills</NavLink>
+          <NavLink to="Projects" smooth={true} duration={500} offset={-80}>Projects</NavLink>
+          <NavLink to="Education" smooth={true} duration={500} offset={-100}>Education</NavLink>
+          <NavLink to="Contact" smooth={true} duration={500} offset={-80}>Contact</NavLink>
         </Nav>
 
-        {/* Contact Info */}
+        {/* Contact Information */}
         <ContactInfo>
           <a href="mailto:irfan02ahamed@gmail.com">
             <EmailIcon /> irfan02ahamed@gmail.com
@@ -140,7 +149,7 @@ const Footer = () => {
           )}
         </SocialMediaIcons>
 
-        <Copyright>&copy; 2024 Irfan Ahamed N. All rights reserved.</Copyright>
+        <Copyright>&copy; {year} Irfan Ahamed N. All rights reserved.</Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

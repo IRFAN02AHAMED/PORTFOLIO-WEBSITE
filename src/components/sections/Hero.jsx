@@ -16,21 +16,29 @@ import StarCanvas from "../canvas/DarkFrameBackground";
 const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center; /* Vertically center the container */
   position: relative;
-  padding: 80px 30px;
+  min-height: 84vh; /* Make it full viewport height */
+  padding: 30px;
   z-index: 1;
-    margin-left: 100px;  /* Moves the entire About box slightly to the right */
+  
+  margin-left: 100px; /* Slightly shifted to the right */
 
   @media (max-width: 1200px) {
-    padding: 66px 16px;
+    padding: 20px;
+    margin-left: 0; /* Remove margin for smaller screens */
+    
   }
 
   @media (max-width: 640px) {
-    padding: 32px 16px;
+    padding: 16px;
+    min-height: 70vh;
   }
-
+  
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
+
+
 const HeroInnerContainer = styled.div`
   position: relative;
   display: flex;
@@ -179,18 +187,55 @@ const ResumeButton = styled.a`
 `;
 
 const Img = styled.img`
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  max-width: 400px;
-  max-height: 400px;
-  border: 2px solid ${({ theme }) => theme.primary};
+  width: 320px;
+  height: 320px; /* Making it a square */
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 20px; /* Optional rounded corners */
 
   @media (max-width: 640px) {
-    max-width: 280px;
-    max-height: 280px;
+    width: 260px;
+    height: 260px; /* Adjusted square dimensions for smaller screens */
+    border-radius: 15px;
+    transform: rotate(-3deg);
   }
 `;
+const LinkedInButton = styled.a`
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+
+  width: 95%;
+  max-width: 300px;
+  text-align: center;
+  padding: 16px 0;
+
+  background: linear-gradient(
+    225deg,
+    hsla(271, 100%, 50%, 1) 0%,
+    hsla(294, 100%, 50%, 1) 100%
+  );
+  box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.4s ease-in-out;
+    box-shadow: 20px 20px 60px #1f2634;
+    filter: brightness(1.1);
+  }
+
+  @media (max-width: 640px) {
+    padding: 12px 0;
+    font-size: 18px;
+  }
+`;
+
+
 
 const HeroBg = styled.div`
   position: absolute;
@@ -215,7 +260,20 @@ const HeroBg = styled.div`
     padding: 0 0px;
   }
 `;
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between the buttons */
+  margin-top: 20px;
+  flex-wrap: nowrap; /* Prevent wrapping to a new line */
+  flex-direction: row;
 
+  @media (max-width: 640px) {
+    gap: 10px;
+    justify-content: space-around;
+  }
+`;
 const Hero = () => {
   return (
     <div id="About">
@@ -250,10 +308,51 @@ const Hero = () => {
                 <SubTitle>{Bio.description}</SubTitle>
               </motion.div>
 
-              <ResumeButton href={Bio.resume} target="_blank">
-                Check Resume
-              </ResumeButton>
+              {/* Use ButtonWrapper to group and space the buttons */}
+              <ButtonWrapper>
+                <ResumeButton href={Bio.resume} target="_blank">
+                  Check Resume
+                </ResumeButton>
+                <LinkedInButton
+                  href="https://www.linkedin.com/in/irfan-ahamed-n-ba036925a/"
+                  target="_blank"
+                >
+                  LinkedIn Profile
+                </LinkedInButton>
+              </ButtonWrapper>
+              <a 
+  href="https://leetcode.com/u/IRFAN_AHAMED_N/" 
+  target="_blank" 
+  style={{
+    width: "95%",
+    maxWidth: "300px",
+    textAlign: "center",
+    padding: "14px 0",
+    background: "linear-gradient(225deg, hsla(271, 100%, 50%, 1), hsla(294, 100%, 50%, 1))",
+    boxShadow: "20px 20px 60px #1f2634, -20px -20px 60px #1f2634",
+    borderRadius: "50px",
+    fontWeight: "600",
+    fontSize: "20px",
+    color: "white",
+    textDecoration: "none",
+    margin: "16px auto",
+    display: "block",
+    transition: "transform 0.4s ease, box-shadow 0.4s ease",
+  }}
+  onMouseEnter={(e) => {
+    e.target.style.transform = "scale(1.05)";
+    e.target.style.boxShadow = "20px 20px 60px #1f2634";
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.transform = "scale(1)";
+    e.target.style.boxShadow = "20px 20px 60px #1f2634, -20px -20px 60px #1f2634";
+  }}
+>
+  LeetCode Profile
+</a>
+
             </HeroLeftContainer>
+
             <HeroRightContainer>
               <motion.div {...headContentAnimation}>
                 <Tilt>
@@ -267,5 +366,4 @@ const Hero = () => {
     </div>
   );
 };
-
 export default Hero;

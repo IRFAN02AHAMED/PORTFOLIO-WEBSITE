@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import emailjs from "@emailjs/browser";
 import EarthCanvas from "../canvas/Earth";
 
 const Container = styled.div`
@@ -35,21 +34,6 @@ const Title = styled.div`
   font-weight: 600;
   margin-top: 20px;
   color: ${({ theme }) => theme.text_primary};
-  @media (max-width: 768px) {
-    margin-top: 12px;
-    font-size: 32px;
-  }
-`;
-
-const Desc = styled.div`
-  font-size: 18px;
-  text-align: center;
-  max-width: 600px;
-  color: ${({ theme }) => theme.text_secondary};
-  @media (max-width: 768px) {
-    margin-top: 12px;
-    font-size: 16px;
-  }
 `;
 
 const ContactForm = styled.form`
@@ -58,7 +42,6 @@ const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   background-color: rgba(17, 25, 40, 0.83);
-  border: 1px solid rgba(255, 255, 255, 0.125);
   padding: 32px;
   border-radius: 12px;
   box-shadow: rgba(23, 92, 230, 0.1) 0px 4px 24px;
@@ -66,104 +49,108 @@ const ContactForm = styled.form`
   gap: 12px;
 `;
 
-const ContactTitle = styled.div`
-  font-size: 28px;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};
-`;
-
 const ContactInput = styled.input`
-  flex: 1;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
+  border: 1px solid rgba(255, 255, 255, 0.3);
   outline: none;
   font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
+  color: #fff;
   border-radius: 12px;
   padding: 12px 16px;
+  margin-bottom: 10px;
   &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+    border-color: #6a0dad;
   }
 `;
 
-const ContactInputMessage = styled.textarea`
-  flex: 1;
+const ContactTextarea = styled.textarea`
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
+  border: 1px solid rgba(255, 255, 255, 0.3);
   outline: none;
   font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
+  color: #fff;
   border-radius: 12px;
   padding: 12px 16px;
+  min-height: 100px;
   &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+    border-color: #6a0dad;
   }
 `;
 
-const ContactButton = styled.input`
-  width: 100%;
-  text-decoration: none;
-  text-align: center;
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  padding: 13px 16px;
-  margin-top: 2px;
+const ContactButton = styled.button`
+  background: linear-gradient(225deg, #6a0dad, #b5179e);
+  color: #fff;
+  padding: 13px;
   border-radius: 12px;
-  border: none;
-  color: ${({ theme }) => theme.text_primary};
   font-size: 18px;
   font-weight: 600;
+  cursor: pointer;
+  border: none;
+  margin-top: 12px;
+  &:hover {
+    opacity: 0.9;
+  }
+`;
+
+const ErrorMsg = styled.div`
+  color: red;
+  margin-top: 10px;
+`;
+
+const SuccessMsg = styled.div`
+  color: green;
+  margin-top: 10px;
 `;
 
 const Contact = () => {
   const form = useRef();
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_tox7kqs",
-        "template_nv7k7mj",
-        form.current,
-        "SybVGsYS52j2TfLbi"
-      )
-      .then(
-        (result) => {
-          alert("Message Sent");
-          form.current.reset();
+    setMessage("");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xyzeeege", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        (error) => {
-          alert(error);
-        }
-      );
+        body: JSON.stringify({
+          name: form.current.name.value,
+          email: form.current.email.value,
+          message: form.current.message.value,
+        }),
+      });
+
+      if (response.ok) {
+        setMessage("Message sent successfully!");
+        form.current.reset();
+      } else {
+        setMessage("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setMessage("Error occurred: Unable to connect to the server.");
+      console.error("Fetch error:", error);
+    }
   };
 
   return (
-    <Container>
+    <Container id="Contact">
       <Wrapper>
         <EarthCanvas />
         <Title>Get in Touch</Title>
-        <Desc>
-          As a full-stack developer skilled in MERN Stack, Java, and C,
-          I am passionate about building scalable applications and UI/UX design. 
-          Feel free to reach out for **collaborations, internships, or freelance projects!
-        </Desc>
-       
+        <ContactForm ref={form} onSubmit={handleSubmit}>
+          <ContactInput type="text" name="name" placeholder="Your Name" required />
+          <ContactInput type="email" name="email" placeholder="Your Email" required />
+          <ContactTextarea name="message" placeholder="Your Message" required />
+          <ContactButton type="submit">Send Message</ContactButton>
+          {message && (message.includes("successfully") ? (
+            <SuccessMsg>{message}</SuccessMsg>
+          ) : (
+            <ErrorMsg>{message}</ErrorMsg>
+          ))}
+        </ContactForm>
       </Wrapper>
     </Container>
   );

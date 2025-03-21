@@ -137,17 +137,6 @@ const Experience = () => {
           to apply my skills to real-world projects.
         </Desc>
 
-        {/* Achievements Section */}
-        <Section>
-          <SectionTitle>Achievements</SectionTitle>
-          <List>
-            {achievements.map((achievement, index) => (
-              <ListItem key={index}>
-                {achievement.title} - {achievement.description}
-              </ListItem>
-            ))}
-          </List>
-        </Section>
 
         {/* Certifications Section */}
         <Section>
