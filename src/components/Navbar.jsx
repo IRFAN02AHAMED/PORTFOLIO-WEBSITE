@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import { Bio } from "../data/constants";
 import { MenuRounded } from "@mui/icons-material";
 
