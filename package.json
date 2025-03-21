@@ -1,7 +1,7 @@
 {
   "name": "3d-portfolio-website",
   "version": "0.1.1",
-  "homepage": "https://irfan02ahamed.github.io/PORTFOLIO-WEBSITE",
+  "homepage": "https://irfan02ahamed.github.io/PORTFOLIO-WEBSITE/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
