@@ -110,7 +110,7 @@ const ProjectCard = ({ project, setOpenModal }) => {
       <Image src={project.image || "/default-image.png"} alt="Project" />
       <Tags>
         {project.tags?.map((tag, index) => (
-          <Tag key={index}>{tag}</Tag>
+          <Tag key={index}>{tag} </Tag>
         ))}
       </Tags>
       <Details>
