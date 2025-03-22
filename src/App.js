@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme } from "./utils/Themes";
 import Navbar from "./components/Navbar";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Hero from "./components/sections/Hero"; // About (Hero) remains as is
 import Skills from "./components/sections/Skills";
 import DarkFrameBackground from "./components/canvas/DarkFrameBackground"; // Frame for sections
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <Body>
           {/* Keep About (Hero) separate */}
@@ -64,7 +64,7 @@ function App() {
             />
           )}
         </Body>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
