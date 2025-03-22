@@ -13,6 +13,7 @@ import {
 } from "../../utils/motion";
 import StarCanvas from "../canvas/DarkFrameBackground";
 
+
 const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -37,7 +38,6 @@ const HeroContainer = styled.div`
   
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
-
 
 const HeroInnerContainer = styled.div`
   position: relative;
@@ -235,8 +235,6 @@ const LinkedInButton = styled.a`
   }
 `;
 
-
-
 const HeroBg = styled.div`
   position: absolute;
   display: flex;
@@ -321,35 +319,35 @@ const Hero = () => {
                 </LinkedInButton>
               </ButtonWrapper>
               <a 
-  href="https://leetcode.com/u/IRFAN_AHAMED_N/" 
-  target="_blank" 
-  style={{
-    width: "95%",
-    maxWidth: "300px",
-    textAlign: "center",
-    padding: "14px 0",
-    background: "linear-gradient(225deg, hsla(271, 100%, 50%, 1), hsla(294, 100%, 50%, 1))",
-    boxShadow: "20px 20px 60px #1f2634, -20px -20px 60px #1f2634",
-    borderRadius: "50px",
-    fontWeight: "600",
-    fontSize: "20px",
-    color: "white",
-    textDecoration: "none",
-    margin: "16px auto",
-    display: "block",
-    transition: "transform 0.4s ease, box-shadow 0.4s ease",
-  }}
-  onMouseEnter={(e) => {
-    e.target.style.transform = "scale(1.05)";
-    e.target.style.boxShadow = "20px 20px 60px #1f2634";
-  }}
-  onMouseLeave={(e) => {
-    e.target.style.transform = "scale(1)";
-    e.target.style.boxShadow = "20px 20px 60px #1f2634, -20px -20px 60px #1f2634";
-  }}
->
-  LeetCode Profile
-</a>
+              href="https://leetcode.com/u/IRFAN_AHAMED_N/" 
+              target="_blank" 
+              style={{
+                width: "95%",
+                maxWidth: "300px",
+                textAlign: "center",
+                padding: "14px 0",
+                background: "linear-gradient(225deg, hsla(271, 100%, 50%, 1), hsla(294, 100%, 50%, 1))",
+                boxShadow: "20px 20px 60px #1f2634, -20px -20px 60px #1f2634",
+                borderRadius: "50px",
+                fontWeight: "600",
+                fontSize: "20px",
+                color: "white",
+                textDecoration: "none",
+                margin: "16px auto",
+                display: "block",
+                transition: "transform 0.4s ease, box-shadow 0.4s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "scale(1.05)";
+                e.target.style.boxShadow = "20px 20px 60px #1f2634";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "scale(1)";
+                e.target.style.boxShadow = "20px 20px 60px #1f2634, -20px -20px 60px #1f2634";
+              }}
+            >
+              LeetCode Profile
+            </a>
 
             </HeroLeftContainer>
 
