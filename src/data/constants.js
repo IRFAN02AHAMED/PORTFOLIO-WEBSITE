@@ -2,15 +2,15 @@ export const Bio = {
   name: "Irfan Ahamed N", // This will be shown on the top bar
   roles: [
     "Full Stack Developer",
-    "Software Developer",
-    "UI/UX Designer",
+    "API Developer",
+    "AI Developer",
     "Programmer",
   ],
   description:
     "I am an IT student with strong expertise in C and Java, specializing in full-stack development. Experienced in building applications and eager to apply my problem-solving skills to both front-end and back-end projects.",
   github: "https://github.com/IRFAN02AHAMED",
   resume:
-    "https://drive.google.com/file/d/1F2Q_731p0RNxkl2hdHdFqOQISNHbOkUG/view?usp=sharing",
+    "https://drive.google.com/file/d/1EjNzeQUG69PlvtS-zZ9yEvsfzPlRZJxB/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/irfan-ahamed-n-ba036925a/",
   profileImage: `${process.env.PUBLIC_URL}/images/HeroImage.jpg`, // Adjusted for GitHub Pages
 };
@@ -59,53 +59,149 @@ export const skills = [
         image:
           "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
       },
+      {
+        name: "React",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+      },
     ],
   },
   {
     title: "Backend",
     skills: [
-      {
-        name: "PHP",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
-      },
-      {
-        name: "MySQL",
-        image: "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
-      },
-    ],
+  {
+    name: "FastAPI",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/FastAPI_logo.svg",
   },
   {
-    title: "Tools and Technologies",
-    skills: [
-      {
-        name: "Figma",
-        image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
-      },
-      {
-        name: "Visual Studio",
-        image: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Vs-code-logo.png",
-      },
-      {
-        name: "Canva",
-        image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Canva_Logo.png",
-      },
-    ],
+    name: "FastMCP",
+    image: "https://cdn-icons-png.flaticon.com/512/2721/2721293.png",
   },
-];
+  {
+    name: "LangChain",
+    image: "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
+  },
+  {
+    name: "LangGraph",
+    image: "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
+  },
+  {
+    name: "REST API",
+    image: "https://cdn-icons-png.flaticon.com/512/2165/2165004.png",
+  },
+
+  {
+    name: "MySQL",
+    image: "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
+  },
+  {
+    name: "PostgreSQL",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
+  },
+]
+  },
+  {
+  title: "Core Skills",
+  skills: [
+    {
+      name: "OOPS",
+      image: "https://img.icons8.com/color/48/source-code.png",
+    },
+    {
+      name: "API Development",
+      image: "https://img.icons8.com/color/48/api-settings.png",
+    },
+    {
+      name: "AI",
+      image: "https://img.icons8.com/color/48/artificial-intelligence.png",
+    },
+    {
+      name: "Prompt Engineering",
+      image: "https://img.icons8.com/color/48/chatgpt.png",
+    },
+    {
+      name: "Cloud Fundamentals",
+      image: "https://img.icons8.com/color/48/cloud.png",
+    },
+  ],
+},
+  {
+  title: "Tools and Technologies",
+  skills: [
+    {
+      name: "Git",
+      image: "https://img.icons8.com/color/48/git.png",
+    },
+    {
+      name: "GitHub",
+      image: "https://img.icons8.com/color/48/github--v1.png",
+    },
+    {
+      name: "VS Code",
+      image: "https://img.icons8.com/color/48/visual-studio-code-2019.png",
+    },
+    {
+      name: "Figma",
+      image: "https://img.icons8.com/color/48/figma--v1.png",
+    },
+    {
+      name: "Canva",
+      image: "https://img.icons8.com/color/48/canva.png",
+    },
+    {
+      name: "n8n",
+      image: "https://img.icons8.com/color/48/workflow.png",
+    },
+    {
+      name: "LangGraph",
+      image: "https://img.icons8.com/color/48/network.png",
+    },
+    {
+      name: "Claude",
+      image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Claude_AI_logo.svg",
+    },
+    {
+      name: "OpenAI",
+      image: "https://img.icons8.com/ios-filled/50/10a37f/openai.png",
+    },
+    // {
+    //   name: "GitHub Copilot",
+    //   image: "https://img.icons8.com/color/48/github-copilot.png",
+    // },
+    {
+      name: "Ollama",
+      image: "https://avatars.githubusercontent.com/u/151674099?s=200&v=4",
+    },
+    {
+      name: "Google AI Studio",
+      image: "https://img.icons8.com/color/48/google-logo.png",
+    },
+    {
+      name: "NotebookLM",
+      image: "https://img.icons8.com/color/48/google-logo.png",
+    },
+    {
+      name: "OpenRouter",
+      image: "https://avatars.githubusercontent.com/u/149850788?s=200&v=4",
+    },
+    {
+  name: "Hugging Face",
+  image: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+}
+  ],
+}]
 
 // Experiences Section
 export const experiences = [
   {
     id: 0,
-    role: "Full Stack Developer",
-    company: "Personal Projects",
-    date: "Ongoing",
-    desc: "Developed web-based applications such as a finance dashboard and a LinkedIn-inspired networking app using the MERN stack. Created an exam result management system with secure student access and role-based data management.",
+    role: "Software Development Intern",
+    company: "Ava Software Private Limited",
+    date: "Internship",
+    desc: "Worked with AI-related concepts such as MCP, agents, API design, and prompt engineering. Assisted in developing and integrating real-world application features and gained hands-on experience with modern software development practices.",
   },
 ];
 
-// Education Section
 // Education Section
 export const education = [
   {
@@ -138,11 +234,11 @@ export const education = [
 export const projects = [
   {
     id: 0,
-    title: "Finance Dashboard",
+    title: "AI Powered Coffee Shop Agent",
     description:
-      "Developed a dynamic, user-friendly finance dashboard with intuitive data visualization and real-time tracking. Optimized performance to handle large datasets efficiently.",
-    tags: ["MERN Stack"],
-    image: `${process.env.PUBLIC_URL}/images/projects/finance-dashboard.png`,
+      "Built an AI-powered coffee shop backend using FastAPI and LangGraph, enabling tools, resources, and prompt-based workflows. Designed a PostgreSQL system to manage customers and orders",
+    tags: ["Python", "FastAPI", "PostgreSQL", "AI"],
+    image: `${process.env.PUBLIC_URL}/images/projects/coffee-shop.png`,
   },
   {
     id: 1,

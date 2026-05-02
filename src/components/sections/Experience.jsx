@@ -6,29 +6,20 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
-  z-index: 1;
   align-items: center;
 `;
 
 const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 100%;
   max-width: 1100px;
-  gap: 12px;
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 `;
 
 const Title = styled.div`
   font-size: 52px;
-  text-align: center;
   font-weight: 600;
   color: ${({ theme }) => theme.text_primary};
 
@@ -42,10 +33,45 @@ const Desc = styled.div`
   text-align: center;
   font-weight: 600;
   color: ${({ theme }) => theme.text_secondary};
+`;
 
-  @media (max-width: 768px) {
-    font-size: 16px;
+const ExperienceCard = styled.div`
+  width: 100%;
+  max-width: 700px;
+  padding: 24px;
+  margin-top: 30px;
+
+  background: ${({ theme }) => theme.card};
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
   }
+`;
+
+const Role = styled.h3`
+  font-size: 22px;
+  color: ${({ theme }) => theme.text_primary};
+`;
+
+const Company = styled.p`
+  font-size: 16px;
+  color: ${({ theme }) => theme.text_secondary};
+`;
+
+const Date = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) => theme.text_secondary};
+`;
+
+const Details = styled.ul`
+  margin-top: 10px;
+  padding-left: 20px;
+  color: ${({ theme }) => theme.text_primary};
 `;
 
 const Section = styled.div`
@@ -57,22 +83,13 @@ const Section = styled.div`
 
 const SectionTitle = styled.h3`
   font-size: 40px;
-  font-weight: 600;
   color: ${({ theme }) => theme.text_primary};
-  text-align: center;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    font-size: 32px;
-  }
 `;
 
 const CertificationsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  justify-items: center;
-  width: 100%;
 
   @media (max-width: 960px) {
     grid-template-columns: repeat(2, 1fr);
@@ -85,7 +102,6 @@ const CertificationsContainer = styled.div`
 
 const CertificationCard = styled.div`
   text-align: center;
-  max-width: 320px;
 `;
 
 const CertificationImage = styled.img`
@@ -94,19 +110,12 @@ const CertificationImage = styled.img`
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 `;
 
 const CertificationName = styled.p`
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
   margin-top: 10px;
   color: ${({ theme }) => theme.text_primary};
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 18px;
-  }
 `;
 
 const Experience = () => {
@@ -114,47 +123,62 @@ const Experience = () => {
     <Container id="Experience">
       <Wrapper>
         <Title>Experience</Title>
+{/* 
         <Desc>
-          As a passionate fresher, I have worked on multiple personal projects
-          and academic assignments, where I have gained hands-on experience in
-          full-stack development, UI/UX design, and problem-solving. I am eager
-          to apply my skills to real-world projects.
-        </Desc>
+          I am an Information Technology student with hands-on experience in AI-driven applications, full-stack development, and API design.
+        </Desc> */}
+
+        {/* 🔥 AVASOFT EXPERIENCE */}
+        <ExperienceCard>
+          <Role>Software Development Intern</Role>
+          <Company>Ava Software Private Limited</Company>
+          <Date>Internship</Date>
+
+          <Details>
+            <li>
+              Worked with AI-related concepts such as MCP, agents, API design,
+              and prompt engineering.
+            </li>
+            <li>
+              Assisted in developing and integrating real-world application
+              features.
+            </li>
+            <li>
+              Gained hands-on experience with modern software development
+              practices and workflows.
+            </li>
+          </Details>
+        </ExperienceCard>
 
         {/* Certifications Section */}
         <Section>
           <SectionTitle>Certifications</SectionTitle>
+
           <CertificationsContainer>
-            {/* JavaScript Certification */}
             <CertificationCard>
               <CertificationImage
                 src={`${process.env.PUBLIC_URL}/assets/certifications/Javascript Course With Certification.png`}
-                alt="JavaScript Certificate"
               />
               <CertificationName>
                 Introduction to JavaScript - Scaler
               </CertificationName>
             </CertificationCard>
 
-            {/* SQL Certification */}
             <CertificationCard>
               <CertificationImage
                 src={`${process.env.PUBLIC_URL}/assets/certifications/Introduction to SQL.png`}
-                alt="SQL Certificate"
               />
               <CertificationName>
                 Introduction to SQL - Simplilearn
               </CertificationName>
             </CertificationCard>
 
-            {/* Python Certification */}
             <CertificationCard>
               <CertificationImage
                 src={`${process.env.PUBLIC_URL}/assets/certifications/CREATE 1ST PYTHON PROGRAM.png`}
-                alt="Python Beginner Certificate"
               />
               <CertificationName>
-                CREATE YOUR 1ST PYTHON PROGRAM FROM UST - UDEMY
+                Create Your First Python Program - UST
               </CertificationName>
             </CertificationCard>
           </CertificationsContainer>

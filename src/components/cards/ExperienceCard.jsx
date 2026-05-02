@@ -69,6 +69,7 @@ const Description = styled.div`
     font-size: 12px;
   }
 `;
+//image
 const Span = styled.div`
   display: -webkit-box;
   max-width: 100%;
@@ -124,7 +125,7 @@ const ExperienceCard = ({ experience }) => {
       date={experience.date}
     >
       <Top>
-        <Image src={experience.img} />
+        <Image src={experience.img} /> 
         <Body>
           <Role>{experience.role}</Role>
           <Company>{experience.company}</Company>
